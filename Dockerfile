@@ -20,9 +20,6 @@ RUN groupadd -r jboss -g 1000 && useradd -u 1000 -r -g jboss -m -d /opt/jboss -s
 # Set the working directory to jboss' user home directory
 WORKDIR /opt/jboss
 
-# Specify the user which should be used to execute all commands below
-USER jboss
-
 # User root user to install software
 USER root
 
