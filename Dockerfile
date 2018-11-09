@@ -5,7 +5,7 @@
 # Merged all other Dockerfiles into one.
 
 FROM centos:7
-MAINTAINER Marek Goldmann <mgoldman@redhat.com>
+LABEL maintainer="Bram Gadeyne <gadeynebram@gmail.com>"
 
 # Install packages necessary to run EAP
 RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
@@ -22,8 +22,6 @@ WORKDIR /opt/jboss
 
 # Specify the user which should be used to execute all commands below
 USER jboss
-
-MAINTAINER Marek Goldmann <mgoldman@redhat.com>
 
 # User root user to install software
 USER root
