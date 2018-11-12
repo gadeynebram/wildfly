@@ -20,7 +20,8 @@ RUN apt-get update && \
 
 RUN curl -O https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz && \
     tar xzv -C /opt -f openjdk-11.0.1_linux-x64_bin.tar.gz && \
-    update-alternatives --install /usr/bin/java java /opt/jdk-11.0.1/bin/java 1
+    update-alternatives --install /usr/bin/java java /opt/jdk-11.0.1/bin/java 1 && \
+    rm openjdk-11.0.1_linux-x64_bin.tar.gz
 #RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
 
 # Create a user and group used to launch processes
