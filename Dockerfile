@@ -15,7 +15,12 @@ LABEL maintainer="Bram Gadeyne <gadeynebram@gmail.com>"
 # Install packages necessary to run EAP
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y install openjdk-11-jdk curl
+    apt-get -y install curl
+
+
+RUN curl -O https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz && \
+    tar xzv -C /opt -f openjdk-11.0.1_linux-x64_bin.tar.gz && \
+    update-alternatives --install /usr/bin/java java /opt/jdk-11.0.1/bin/java 1
 #RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
 
 # Create a user and group used to launch processes
@@ -30,7 +35,7 @@ RUN groupadd -r jboss -g 1000 && \
 WORKDIR /opt/jboss
 
 # Set the JAVA_HOME variable to make it clear where Java is located
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+ENV JAVA_HOME /opt/jdk-11.0.1
 
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 14.0.1.Final
