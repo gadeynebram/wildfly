@@ -81,7 +81,9 @@ You don't need to do this on your own, because we prepared a trusted build for t
 
 ## Image internals [updated november 12, 2018]
 
-This image extends the [`ubuntu:bionic`](https://hub.docker.com/_/ubuntu/) and adds the openjdk-11-jdk package. Please refer to the README.md for selected images for more info.
+This image extends the [`ubuntu:bionic`](https://hub.docker.com/_/ubuntu/) and adds  openjdk-11.0.1_linux-x64_bin.tar.gz from java.net. Please refer to the README.md for selected images for more info.
+
+OpenJDK from java.net is used because ubuntu18 currently ships Java 10 instead of 11 under package openjdk-11-jdk.
 
 The server is run as the `jboss` user which has the uid/gid set to `1000`.
 
