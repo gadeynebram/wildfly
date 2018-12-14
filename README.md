@@ -1,3 +1,5 @@
+Update: the new official wildfly docker image 15.0.0.Final-1 does contain openjdk11.
+
 # WildFly Docker image
 
 This is an example Dockerfile with [WildFly application server](http://wildfly.org/).
